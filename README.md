@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexus App
 
-## Getting Started
+Entretenimiento, Gustos, Gaming, en 1 app. Mejora las desventajas de apps actuales y ofrece una experiencia de usuario mejorada con IA, interfaz personalizada y videos cortos para entretenimiento infinito con una amplia gama de gustos y música.
 
-First, run the development server:
+## 🎯 El Problema que Resuelve
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Los usuarios están cansados de saltar entre múltiples aplicaciones: fotos en Instagram, videos en TikTok, debates en X (Twitter), eventos en Facebook, contactos profesionales en LinkedIn y grupos en Discord. **Nexus** unifica estas experiencias en una sola plataforma con una capa de inteligencia artificial que personaliza todo para ti.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Características Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Conexión por Gustos**: Conecta con personas que comparten tus intereses
+- **Publicaciones Personalizables**: Texto, stickers, imágenes y más
+- **Feed Inteligente**: Alimentado por IA para mostrarte contenido relevante
+- **Perfil Personalizable**: Haz que tu perfil refleje tu personalidad
+- **Videos Cortos**: Entretenimiento infinito con contenido de alta calidad
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologías Utilizadas
 
-## Learn More
+- **Frontend**: Next.js 14 con App Router
+- **Backend**: Next.js API Routes
+- **Autenticación**: JWT con cookies HTTP-Only
+- **Base de Datos**: (Próximamente)
+- **IA/ML**: (Próximamente)
 
-To learn more about Next.js, take a look at the following resources:
+## 📋 Fases de Desarrollo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Fase 1 - MVP (En Progreso)
+- [x] Autenticación (Login/Registro)
+- [ ] Perfil de Usuario Básico
+- [ ] Feed con Publicaciones
+- [ ] Sistema de Likes y Comentarios
+- [ ] Recomendaciones Básicas por IA
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Fase 2 - Mejoras y Características Adicionales
+- [ ] Videos Cortos (Tipo TikTok)
+- [ ] Stickers y Personalización Avanzada
+- [ ] Chats Privados
+- [ ] Grupos de Interés
 
-## Deploy on Vercel
+## 🚀 Cómo Empezar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/nexus.git
+   cd nexus
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+3. Configura las variables de entorno (crea un archivo `.env.local`):
+   ```
+   NEXTAUTH_SECRET=tu_secreto_seguro
+   # Otras variables de entorno...
+   ```
+
+4. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+
+5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## 📈 Estrategia de Lanzamiento
+
+1. **Versión Beta Cerrada**: Inicia con un grupo pequeño de usuarios para recibir feedback
+2. **Crecimiento Orgánico**: Enfócate en comunidades específicas de interés
+3. **Monetización**: Publicidad inteligente y características premium
+
+## 💡 Próximos Pasos
+
+- Implementar sistema de perfiles
+- Desarrollar el feed principal
+- Integrar recomendaciones por IA
+- Añadir soporte para videos cortos
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Por favor, lee nuestras pautas de contribución antes de enviar un pull request.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
