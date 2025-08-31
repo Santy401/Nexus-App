@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import { FeedNavbar } from '@/app/ui/components/FeedNavbar';
 import { FeedRight } from '@/app/ui/components/FeedRight';
+import { FeedHome } from '@/app/ui/components/FeedHome';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -46,7 +47,7 @@ export default function DashboardPage() {
         <FeedNavbar />
       </div>
       {/* Columna central */}
-      <div className="text-center">222222</div>
+      <div className="text-center"><FeedHome /></div>
       {/* Columna de la derecha */}
       <div className="text-center"><FeedRight /></div>
 

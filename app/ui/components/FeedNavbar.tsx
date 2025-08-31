@@ -1,21 +1,38 @@
-import DefaultUser from '@/app/ui/aseets/defaultUser.png';
+import { Home, MessageSquare, Users, Bell, Settings } from 'lucide-react';
 import Download from '@/app/ui/aseets/DowloadQR.png';
+import Logo from '@/app/ui/aseets/LogoDontBG.png';
 
 export const FeedNavbar = () => {
     return (
         <nav className='flex flex-col justify-between h-screen mt-8 position fixed w-1/5'>
-            <div id='profile' className='flex flex-col'>
+            {/* <div id='profile' className='flex flex-col'>
                 <img src={DefaultUser.src} alt="PhotoUser" className="w-44 h-44 mb-2 rounded-full flex m-auto" />
                 <span id='username' className='text-2xl font-bold text-center'>DefaultUser</span>
                 <span id='identifier' className='text-center text-gray-300'>@defaultuser</span>
-            </div>
+            </div> */}
+            <img src={Logo.src} alt="Logo" className="w-1/1 h-1/10 object-cover " />
             <ul className='flex flex-col w-fit h-[20%] m-auto gap-6'>
                 <div className='flex flex-col items-start gap-6'>
-                    <li><a href="#">Feed</a></li>
-                    <li><a href="#">Mensajes</a></li>
-                    <li><a href="#">Amigos</a></li>
-                    <li><a href="#">Notificaciones</a></li>
-                    <li><a href="#">Configuración</a></li>
+                    <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <Home className="w-5 h-5" />
+                        <a href="#">Feed</a>
+                    </li>
+                    <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <MessageSquare className="w-5 h-5" />
+                        <a href="#">Mensajes</a>
+                    </li>
+                    <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <Users className="w-5 h-5" />
+                        <a href="#">Amigos</a>
+                    </li>
+                    <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <Bell className="w-5 h-5" />
+                        <a href="#">Notificaciones</a>
+                    </li>
+                    <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <Settings className="w-5 h-5" />
+                        <a href="#">Configuración</a>
+                    </li>
                     <form action="/api/auth/logout" method="POST" className="mb-2">
                         <button
                             type="submit"
