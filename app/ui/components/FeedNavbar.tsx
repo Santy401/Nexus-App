@@ -10,9 +10,9 @@ export const FeedNavbar = () => {
                 <span id='username' className='text-2xl font-bold text-center'>DefaultUser</span>
                 <span id='identifier' className='text-center text-gray-300'>@defaultuser</span>
             </div> */}
-            <img src={Logo.src} alt="Logo" className="w-1/1 h-1/10 object-cover " />
+            <img src={Logo.src} alt="Logo" className="w-1/1 h-1/12 object-cover ml-6 " />
             <ul className='flex flex-col w-fit h-[20%] m-auto gap-6'>
-                <div className='flex flex-col items-start gap-6'>
+                <div className='flex flex-col items-start gap-10'>
                     <li className="flex items-center gap-2 hover:text-blue-500 transition-colors">
                         <Home className="w-5 h-5" />
                         <a href="#">Feed</a>

@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     // Validación de credenciales (ejemplo)
-    if (email === 'admin@example.com' && password === 'password') {
+    if (email === 'santiprocastellar7@gmail.com' && password === 'Santy401') {
       const response = NextResponse.json({ 
         message: 'Inicio de sesión exitoso',
         user: { email, name: 'Administrador' }
