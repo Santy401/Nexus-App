@@ -19,7 +19,7 @@ export default function Login() {
     const password = formData.get('password') as string;
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('/infraestructure/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function Login() {
       }
 
       // Redirigir al dashboard después de un inicio de sesión exitoso
-      router.push('/dashboard');
+      router.push('/ui/dashboard');
       router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al iniciar sesión');

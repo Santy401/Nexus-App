@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 
 export async function POST(request: Request) {
   try {
@@ -13,14 +13,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Validación de credenciales (ejemplo)
+    // Datos de credenciales a codigo
     if (email === 'santiprocastellar7@gmail.com' && password === 'Santy401') {
       const response = NextResponse.json({ 
         message: 'Inicio de sesión exitoso',
         user: { email, name: 'Administrador' }
       });
 
-      // Establecer cookie HTTP-Only segura
+      // Establecer cookie HTTP-Only 
       response.cookies.set({
         name: 'auth-token',
         value: 'dummy-auth-token',

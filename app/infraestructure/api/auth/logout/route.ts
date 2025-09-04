@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server';
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
-    const response = NextResponse.json({ 
-      message: 'Sesión cerrada correctamente',
-      redirect: '/auth/login'  
-    });
+    const response = NextResponse.redirect(new URL('/ui/pages/auth/login', request.url));
     
     // Eliminar la cookie de autenticación
     response.cookies.set({
@@ -18,12 +15,6 @@ export async function POST() {
     return response;
   } catch (error) {
     console.error('Error al cerrar sesión:', error);
-    return NextResponse.json(
-      { 
-        message: 'Error al cerrar sesión',
-        redirect: '/auth/login'  
-      },
-      { status: 500 }
-    );
+    return NextResponse.redirect(new URL('/ui/pages/auth/login', request.url));
   }
 }

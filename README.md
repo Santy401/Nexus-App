@@ -8,7 +8,7 @@ Los usuarios están cansados de saltar entre múltiples aplicaciones: fotos en I
 
 ## Idesas 
 
-U- Alguna funcionalidad de rachas para **NEXUS**
+- Alguna funcionalidad de rachas para **NEXUS**
 - Que salga cuando estas juando o haciendo algo salga en el perfil
 - Animaciones suabes
 - Que con la IA puedas buscar publicaciones
