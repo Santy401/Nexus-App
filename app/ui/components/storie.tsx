@@ -71,7 +71,7 @@ const StoryViewer = ({
   useEffect(() => {
     if (isPaused) return;
 
-    const duration = 20000; // Aumentado de 5000ms a 10000ms (10 segundos)
+    const duration = 20000; // Duracion de historias (10 segundos)
     const startTime = Date.now();
     const startProgress = progress;
     
@@ -197,11 +197,9 @@ const StoryViewer = ({
 };
 
 export const Storie = () => {
-  // Estados únicos - se eliminó la duplicación
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
 
-  // Funciones únicas - se eliminó la duplicación
   const openStoryViewer = useCallback((index: number) => {
     setCurrentStoryIndex(index);
     setIsViewerOpen(true);

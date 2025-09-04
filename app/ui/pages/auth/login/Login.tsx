@@ -33,7 +33,6 @@ export default function Login() {
         throw new Error(data.message || 'Error al iniciar sesión');
       }
 
-      // Redirigir al dashboard después de un inicio de sesión exitoso
       router.push('/ui/dashboard');
       router.refresh();
     } catch (err) {

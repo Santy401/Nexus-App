@@ -13,11 +13,10 @@ export default function DashboardPage() {
   const [user, setUser] = useState<{name?: string, email?: string} | null>(null);
 
   useEffect(() => {
-    // Verificar autenticación al cargar el componente
     const checkAuth = async () => {
       try {
         const response = await fetch('/infraestructure/api/auth/me', {
-      credentials: 'include'  // Asegurarse de incluir las cookies
+      credentials: 'include'
     });
         if (!response.ok) {
           throw new Error('No autenticado');

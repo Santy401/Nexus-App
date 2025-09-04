@@ -16,8 +16,6 @@ export const Post = ({ postData }: PostProps) => {
     const [isBookmarked, setIsBookmarked] = useState(postData.actions?.bookmarked || false);
     const [isReposted, setIsReposted] = useState(postData.actions?.reposted || false);
 
-    // Post component is responsible for rendering a single post
-
     return (
         <div className="bg-[#1c1c1c] border border-[#3B3D3E] rounded-lg p-4 mb-4 max-w-2xl mx-auto">
             {/* Header */}
@@ -32,7 +30,6 @@ export const Post = ({ postData }: PostProps) => {
                         alt="User"
                         className="w-10 h-10 rounded-full object-cover"
                         onError={(e) => {
-                            // Fallback in case the image fails to load
                             const target = e.target as HTMLImageElement;
                             target.src = DefaultUser.src;
                         }}
@@ -226,7 +223,6 @@ export const Post = ({ postData }: PostProps) => {
     );
 };
 
-// Componente para mostrar múltiples posts
 export const PostsList = () => {
     const { posts } = usePosts();
     

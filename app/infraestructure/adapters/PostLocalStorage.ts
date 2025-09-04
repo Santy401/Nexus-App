@@ -53,7 +53,6 @@ export class PostLocalStorage implements PostRepository {
   async create(post: Post): Promise<void> {
     try {
       const posts = await this.getAll();
-      // Ensure we're not mutating the original post
       const newPost = this.transformToPost(post);
       posts.unshift(newPost);
       localStorage.setItem(this.key, JSON.stringify(posts));
