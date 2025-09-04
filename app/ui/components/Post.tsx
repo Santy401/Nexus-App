@@ -1,106 +1,22 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Share2, Repeat2, Bookmark } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePosts } from "@/app/ui/hooks/usePosts";
 import DefaultUser from '@/app/ui/aseets/defaultUser.png';
 
-const MOCK_POSTS = [
-    {
-        id: 1,
-        user: {
-            username: "AnaGarcia",
-            avatar: DefaultUser.src,
-            postTime: "3h ago",
-            verified: true
-        },
-        content: {
-            text: "¡Acabo de visitar el museo de arte moderno y quedé maravillada con las nuevas exposiciones! Definitivamente recomiendo visitarlo este fin de semana. ¿Alguien más ha ido recientemente?",
-            images: [
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            ]
-        },
-        stats: {
-            likes: 243,
-            comments: 42,
-            reposts: 18,
-            views: 1250
-        },
-        actions: {
-            liked: false,
-            bookmarked: false,
-            reposted: false
-        },
-        tags: ["#Arte", "#Museo", "#Cultura"]
-    },
-    {
-        id: 2,
-        user: {
-            username: "CarlosTech",
-            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-            postTime: "5h ago",
-            verified: false
-        },
-        content: {
-            text: "Acabo de terminar de desarrollar una nueva aplicación móvil con React Native. ¡Estoy muy emocionado con los resultados! ¿Qué opinan de las nuevas tendencias en desarrollo móvil?",
-            images: [
-                "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            ],
-            link: {
-                url: "https://github.com/carlostech/app-demo",
-                title: "Ver repositorio en GitHub",
-                description: "Código fuente de la nueva aplicación móvil"
-            }
-        },
-        stats: {
-            likes: 187,
-            comments: 35,
-            reposts: 12,
-            views: 980
-        },
-        actions: {
-            liked: true,
-            bookmarked: true,
-            reposted: false
-        },
-        tags: ["#Programación", "#ReactNative", "#DesarrolloMóvil"]
-    },
-    {
-        id: 3,
-        user: {
-            username: "ViajeraSofia",
-            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-            postTime: "1d ago",
-            verified: true
-        },
-        content: {
-            text: "¡Miren esta vista increíble desde mi último destino! La naturaleza siempre nos regala los mejores paisajes. ¿Cuál ha sido el lugar más hermoso que han visitado?",
-            images: [
-                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-            ]
-        },
-        stats: {
-            likes: 542,
-            comments: 87,
-            reposts: 43,
-            views: 2560
-        },
-        actions: {
-            liked: false,
-            bookmarked: false,
-            reposted: true
-        },
-        tags: ["#Viajes", "#Naturaleza", "#Aventura", "#Paisajes"]
-    }
-];
+import { Post as PostType } from "@/app/domain/post/entities/Post";
 
-// Componente Post individual
-export const Post = ( { postData } ) => {
+interface PostProps {
+    postData: PostType;
+}
+
+export const Post = ({ postData }: PostProps) => {
     const [commentText, setCommentText] = useState('');
     const [isLiked, setIsLiked] = useState(postData.actions?.liked || false);
     const [isBookmarked, setIsBookmarked] = useState(postData.actions?.bookmarked || false);
     const [isReposted, setIsReposted] = useState(postData.actions?.reposted || false);
+
+    // Post component is responsible for rendering a single post
 
     return (
         <div className="bg-[#1c1c1c] border border-[#3B3D3E] rounded-lg p-4 mb-4 max-w-2xl mx-auto">
@@ -108,9 +24,18 @@ export const Post = ( { postData } ) => {
             <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center space-x-2">
                     <img
-                        src={postData.user.avatar}
+                        src={!postData.user?.avatar 
+                            ? DefaultUser.src 
+                            : typeof postData.user.avatar === 'string' 
+                                ? postData.user.avatar 
+                                : postData.user.avatar?.src || DefaultUser.src}
                         alt="User"
                         className="w-10 h-10 rounded-full object-cover"
+                        onError={(e) => {
+                            // Fallback in case the image fails to load
+                            const target = e.target as HTMLImageElement;
+                            target.src = DefaultUser.src;
+                        }}
                     />
                     <div className="flex align-center items-center gap-1">
                         <div className='flex align-center items-center gap-1'>
@@ -171,7 +96,7 @@ export const Post = ( { postData } ) => {
                 {/* Link preview */}
                 {postData.content.link && (
                     <div className="mt-3 p-3 border border-[#3B3D3E] rounded-lg">
-                        <a href={postData.content.url} className="text-blue-400 hover:underline">
+                        <a href={postData.content.link.url} className="text-blue-400 hover:underline">
                             {postData.content.link.title}
                         </a>
                         <p className="text-gray-400 text-sm">{postData.content.link.description}</p>
@@ -303,9 +228,30 @@ export const Post = ( { postData } ) => {
 
 // Componente para mostrar múltiples posts
 export const PostsList = () => {
+    const { posts } = usePosts();
+    
+    if (posts.length === 0) {
+        return (
+            <div className="text-white text-center p-8">
+                <p className="text-xl mb-4">No hay publicaciones aún</p>
+                <p className="text-gray-400">Sé el primero en publicar algo</p>
+                
+                {/* Opcional: Mostrar MOCK_POSTS para desarrollo */}
+                {/* <div className="mt-8">
+                    <h3 className="text-lg mb-4">Ejemplo de publicaciones:</h3>
+                    {MOCK_POSTS.map(post => (
+                        <div key={post.id} className="mb-4 p-4 border border-gray-700 rounded-lg">
+                            <Post postData={post} />
+                        </div>
+                    ))}
+                </div> */}
+            </div>
+        );
+    }
+
     return (
         <div>
-            {MOCK_POSTS.map(post => (
+            {posts.map((post: PostType) => (
                 <Post key={post.id} postData={post} />
             ))}
         </div>

@@ -1,0 +1,14 @@
+#optionsPost{
+    display: flex;
+    gap: 5px;
+    margin-left: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+#iconOptionPost {
+    width: 20px;
+    height: 20px;
+}
+#OptionVisibility {
+    display: flex;
+}

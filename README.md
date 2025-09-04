@@ -6,6 +6,34 @@ Entretenimiento, Gustos, Gaming, en 1 app. Mejora las desventajas de apps actual
 
 Los usuarios están cansados de saltar entre múltiples aplicaciones: fotos en Instagram, videos en TikTok, debates en X (Twitter), eventos en Facebook, contactos profesionales en LinkedIn y grupos en Discord. **Nexus** unifica estas experiencias en una sola plataforma con una capa de inteligencia artificial que personaliza todo para ti.
 
+## Idesas 
+
+U- Alguna funcionalidad de rachas para **NEXUS**
+- Que salga cuando estas juando o haciendo algo salga en el perfil
+- Animaciones suabes
+- Que con la IA puedas buscar publicaciones
+- Tener una mascota 
+- Conexiones externas con apps
+- Tener una lista de mejores amigos para poder compartir publicaciones con ellos
+- Cuando des **@Nexus** puedas hacer preguntas a la IA en grupos o chats
+- Notificaciones toast en **NEXUS**
+- Foto de perfil animadas
+- Persolaizacion de interfas en nexus
+- Raking de post para que muestre los post mas virales 
+- Publicaciones anonimas en grupos o crear grupos con gente anonima
+- Historias destacadas con mas personalizacion
+- Notificaciones cuando alguien responde o poder selecionar que si te puede notificar 
+- Poder hacer publicaciones automaticas (asi como una alarma)
+- Poder envias fotos de 1 vez en chat y videos en 1 vez u audios
+- Descarga de Publicaciones para ver sin internet 100, 200, 300. Se guarden el Local
+- Bloqueo de chats o chats ocultos u grupos
+- Sistema de videos cortos se puedan ver cuantos videos as visto en toda tu cuenta
+
+## Afuturo
+
+- Un tipo Whatsaap con verificacion de simcard y con las funcionalidades de **NEXUS**
+- A futuro que las personas puedan crear ENVIVOS
+
 ## 🚀 Características Principales
 
 - **Conexión por Gustos**: Conecta con personas que comparten tus intereses
@@ -27,7 +55,7 @@ Los usuarios están cansados de saltar entre múltiples aplicaciones: fotos en I
 ### Fase 1 - MVP (En Progreso)
 - [x] Autenticación (Login/Registro)
 - [ ] Perfil de Usuario Básico
-- [ ] Feed con Publicaciones
+- [x] Feed con Publicaciones
 - [ ] Sistema de Likes y Comentarios
 - [ ] Recomendaciones Básicas por IA
 
