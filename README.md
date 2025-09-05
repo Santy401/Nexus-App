@@ -28,6 +28,8 @@ Los usuarios están cansados de saltar entre múltiples aplicaciones: fotos en I
 - Descarga de Publicaciones para ver sin internet 100, 200, 300. Se guarden el Local
 - Bloqueo de chats o chats ocultos u grupos
 - Sistema de videos cortos se puedan ver cuantos videos as visto en toda tu cuenta
+- Que el verificado tenga un color dorado con animacion de reflejo y que cuandon usuario entre salga que numero de usuario es
+
 
 ## Afuturo
 
